@@ -256,7 +256,7 @@ void GuideDialog::Startup() {
       if (r.ok) SignedInToast();
       else OpenSignIn();
     });
-  } else {
+  } else if (!config_.sign_in_at_startup || config_.sign_in_at_startup()) {
     OpenSignIn();
   }
 }
